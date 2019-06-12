@@ -1,228 +1,132 @@
+Getting Started with Autonomous Data Warehouse (ADW) and Oracle Machine Learning (OML)
+----------------------------------------------------------------------------
 
 ![](images/100/Picture100-lab.png)  
-Updated: February 10, 2017
+Updated: January 4, 2019
 
-## Introduction
+## **Introduction**
 
-This is the first of several labs that are part of the **Oracle Public Cloud DevOps Cloud Native Microservices workshop.** This workshop will walk you through the Software Development Lifecycle (SDLC) for a Cloud Native project that will create and use several Microservices.
+This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and the new Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and create a new OML user.
 
-You will take on 3 Personas during the workshop. The **Project Manager Persona** will create the projects, add tasks and features to be worked on, and assign tasks to developers.  The Project Manager will then start the initial sprint. The Java Developer persona will develop a new twitter feed service that will allow for retrieval and filtering of twitter data. The **JavaScript Developer** persona will develop a new Twitter Marketing UI that will display the twitter data to allow for analysis.  During the workshop, you will get exposure to Oracle Developer Cloud Service and Oracle Application Container Cloud Service.
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
-- Create Initial Project
-    - Add Users to Project
-- Create Product Issues
-    - Create Issues for Twitter Feed Microservice
-    - Create Issues for Twitter Feed Marketing UI
-- Create Agile Board and initial Sprint
-- Add Issues to Sprint
+-   Learn how to provision a new Autonomous Data Warehouse
+-   Learn how to create OML Users
 
 ## Required Artifacts
-- The following lab requires an Oracle Public Cloud account that will be supplied by your instructor.
+-   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
+# Provision Autonomous Data Warehouse (ADW) and Create Users in Oracle Machine Learning (OML)
 
-# Create Twitter Feed Marketing Project
+## Part 1. Provisioning an ADW Instance
 
-## Create Developer Cloud Service Project
 
-### **STEP 1**: Login to your Oracle Cloud Account
-- From any browser, go to the URL:
-    `https://cloud.oracle.com`
+In this section you will be provisioning an ADW instance using the cloud console.
 
-- click **Sign In** in the upper right hand corner of the browser
 
-    ![](images/100/Picture100-1.png)
+### **STEP 1: Sign in to Oracle Cloud**
 
-- **IMPORTANT** - Under my services, select from the drop down list the correct data center and click on **My Services**. If you are unsure of the data center you should select, and this is an in-person training event, ***ask your instructor*** which **Region** to select from the drop down list. If you received your account through an Oracle Trial, your Trial confirmation email should provide a URL that will pre-select the region for you.
+-   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
 
-    ![](images/100/Picture100-2.png)
+![](./images/100/Picture100-2.png)
 
-- Enter your identity domain and click **Go**.
+-   Enter your **Cloud Account Name** and click **My Services**.
 
-    **NOTE:** The **Identity Domain, User Name** and **Password** values will be given to you by the instructor or Trial confirmation email.
+![](./images/100/Picture100-3.jpg)
 
-    ![](images/100/Picture100-3.png)
+-   Enter your Oracle Cloud **username** and **password**, and click **Sign In**.
 
-- Once your Identity Domain is set, enter your User Name and Password and click **Sign In**
+![](./images/100/Picture100-4.png)
 
-  **NOTE:** For this lab you will assume the role of Project Manager ***Lisa Jones***. Although you are assuming the identify of Lisa Jones, you will log into the account using the **username** provided to you by your instructor, given to you by your corporation, or supplied to you as part of an Oracle Trial. As you progress through the workshop, you will remain logged in as a single user, but you will make “logical” changes from Lisa Jones the Project Manager to other personas.
+### **STEP 2: Create an ADW Instance**
 
-    ![](images/lisa.png)
+-   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
 
-    ![](images/100/Picture100-3.5.png)
+![](images/LabGuide100-4797549d.png)
 
-- You will be presented with a Dashboard displaying the various cloud services available to this account.
+-  This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Select the root compartment, or another compartment of your choice.
 
-    ![](images/100/Picture100-4.png)
+![](./images/100/Picture100-26.jpg)
 
-- If all your services are not visible, **click** on the **Customize Dashboard**, you can add services to the dashboard by clicking **Show.** For this workshop, you will want to ensure that you are showing at least the **Application Container, Developer and Storage** cloud services. If you do not want to see a specific service, click **Hide**
+-  Specify a memorable display name for the instance. Also specify your database's name, for this lab use ADWFINANCE.
 
-    ![](images/100/Picture100-5.png)
+![](./images/100/Picture100-27.jpeg)
 
-### **STEP 2**: Check/Set Storage Replication Policy
+-  Next, select the number of CPUs and storage size. Here, we use 4 CPUs and 1 TB of storage.
 
-Depending on the state of your Cloud Account, you may need to set the replication policy, if it has not been previously set. In this step you will got to the Storage Cloud Service to check on the status of the Replicaton Policy. 
+![](./images/100/Picture100-28.jpeg)
 
-- Click on the **Storage** Cloud Service
+-  Then, specify an ADMIN password for the instance, and a confirmation of it. Make a note of this password.
 
-    ![](images/100/Picture-01.png)
+![](./images/100/Picture100-29.jpeg)
 
-- If you see a message requesting that you **Set Replication Policy** as is shown below, click on the message. If the message is not displayed, your replicatin policy has already been set and you can continue to the next step by clicking on the **Dashboard** icon in the top right corner of the page.
+-  For this lab, we will select Subscribe To A New Database License. If your organization owns Oracle Database licenses already, you may bring those license to your cloud service.
 
-    ![](images/100/Picture-02.png)
+![](./images/100/Picture100-37.JPG)
 
-- Care must be taking when setting your replication policy, because it cannot be changed. With Trial accounts, the first option available will generatlly set the replication policy sufficient for this workshop, so we will take the Default, and click on the **Set** button. 
+-  Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Data Warehouse**.
 
-    ![](images/100/Picture-03.png)
+![](./images/100/Picture100-31.jpeg)
 
-- Click on the **Dashboard** button
+-  Your instance will begin provisioning. Once the state goes from Provisioning to Available, click on your display name to see its details.
 
-    ![](images/100/Picture-04.png)
+![](./images/100/Picture100-32.jpeg)
 
-### **STEP 3**: Login to Developer Cloud Service
+-  You now have created your first Autonomous Data Warehouse instance. Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-Oracle Developer Cloud Service provides a complete development platform that streamlines team development processes and automates software delivery. The integrated platform includes an issue tracking system, agile development dashboards, code versioning and review platform, continuous integration and delivery automation, as well as team collaboration features such as wikis and live activity stream. With a rich web based dashboard and integration with popular development tools, Oracle Developer Cloud Service helps deliver better applications faster.
+![](./images/100/Picture100-38.JPG)
 
-- From the Cloud UI dashboard click on the **Developer** service. In our example, the Developer Cloud Service is named **developer99019**.
 
-    ![](images/100/Picture100-6.png)
 
-- The Service Details page gives you a quick glance of the service status overview.
 
-    ![](images/100/Picture100-7.png)
 
-- Click **Open Service Console** for the Oracle Developer Cloud Service. The Service Console will then list all projects for which you are currently a member.
+## Part 2. Creating an OML Users
 
-    ![](images/100/Picture100-7.5.png)
 
-### **STEP 4**: Create Developer Cloud Service Project
+### **STEP 3: Creating OML Users**
 
-- Click **New Project** to start the project create wizard.
+- Click the **Service Console** button on your Autonomous Data Warehouse details page.
 
-    ![](images/100/Picture100-8.png)
+![](images/LabGuide100-2ba02578.png)
 
-- On Details screen enter the following data and click on **Next**.
+- Click the **Administration** tab and click **Manage Oracle ML Users** to go to the OML user management page.
 
-    **Name:** `Twitter Feed Marketing Project`
+![](images/LabGuide100-18cd319d.png)
 
-    **Description:** `Project to gather and analyze twitter data`
+This will open a new tab within your browser that asks you for a username and password.
 
-    **Note:** A Private project will only be seen by you. A Shared project will be seen by all Developer Cloud users. In either case, users need to be added to a project in order to interact with the project.
+-   Enter **admin** as the username and use the password you specified when provisioning your ADWC instance.
 
-    ![](images/100/Picture100-9.png)
+![](./images/100/Picture700-4.png)
 
-- Leave default template set to **Empty Project** and click **Next**
+**Note** that you do not have to go to this page using the same steps every time, you can bookmark this Oracle ML Notebook Admin URL and access it directly later.
 
-    ![](images/100/Picture100-10.png)
+-   Click **Create** button to create a new OML user. Note that this will also create a new database user with the same name. This newly created user will be able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user (*for this lab you can use your own personal email address*) when creating the user.
 
-- Select your **Wiki Markup** preference to **MARKDOWN** and click **Finish**.
+![](./images/100/Picture700-5.png)
 
-    ![](images/100/Picture100-11.png)
+-   Enter the required information for this user, name the user as **omluser1**. If you supplied a valid **email address**, a welcome email should arrive within a few minutes to your Inbox. Click the **Create** button, in the top-right corner of the page, to create the user.
 
-- The Project Creation will take about 1 minute.
+![](./images/100/Picture700-7.png)
 
-    ![](images/100/Picture100-12.png)
+-   Below is the email which each user receives welcoming them to the OML application. It includes a direct link to the OML application
+for that user which they can bookmark.
 
-- You now have a new project, in which you can manage your software development.
+![](./images/100/Picture700-8.png)
 
-    ![](images/100/Picture100-13.png)
+-   After you click **Create** you will see that user listed in the Users section.
 
+![](./images/100/Picture700-9.png)
 
+-   Using the same steps, create another user named **omluser2**.
 
-# Create Product Issues
+![](./images/100/Picture700-10.png)
 
-## Create Issues for Twitter Feed Microservice
+You will use these two users later in this workshop.
 
-### **STEP 5**: Create Issue for the initial GIT Repository Creation
 
-In this step you are still assuming the identity of the Project Manager, ***Lisa Jones***.
 
-![](images/lisa.png)
-
-- Click **Issues** on left hand navigation panel to display the Track Issues page.
-
-    ![](images/100/Picture100-16.png)
-
-- Click **New Issue**. Enter the following data in the New Issue page and click **Create Issue**.
-
-    **Note:** Throughout the lab you will assign your own account as the “physical” owner of the issue, but for the sake of this workshop, **Bala Gupta** will be the “logical” owner of the following issues.
-
-    ![](images/bala.png)
-
-    **Summary:**
-    `Create Initial GIT Repository for Twitter Feed Service`
-
-    **Description:**
-    `Create Initial GIT Repository for Twitter Feed Service`
-
-    **Type:** `Task`
-
-    **Owner:** `Select your account provided in the dropdown [Logical Owner: Bala Gupta]`
-
-    **Story Points:** `1`
-
-    Note: Story point is an arbitrary measure used by Scrum teams. They are used to measure the effort required to implement a story. This [Site](https://agilefaq.wordpress.com/2007/11/13/what-is-a-story-point/) will provide more information. 
-
-    ![](images/100/Picture100-17.png)
-
-### **STEP 6**: Create Issue for Update Twitter Credentials
-
-- Click **New Issue**. Enter the following data in the New Issue page and click **Create Issue**.
-
-    ![](images/bala.png)
-
-    **Summary:** `Create Filter on Twitter Feed`
-
-    **Description:** `Create Filter to allow user to supply text to reduce the amount of data returned by the Twitter feed`
-
-    **Type:** `Feature`
-
-    **Owner:** `Select your account provided in the dropdown [Logical Owner: Bala Gupta]`
-
-    **Story Points:** `2`
-
-    ![](images/100/Picture100-18.png)
-
-### **STEP 7**: Create Issue for initial GIT Repository creation
-
-- Click **New Issue**. Enter the following data in the New Issue page and click **Create Issue**. Note: The next two issues will logically be owned by John Dunbar.
-
-    ![](images/john.png)
-
-    **Summary:** `Create Initial GIT Repository for Twitter Feed Marketing UI`
-
-    **Description:** `Create Initial GIT Repository for Twitter Feed Marketing UI`
-
-    **Type:** `Task`
-
-    **Owner:** `Select your account provided in the dropdown [Logical Owner: John Dunbar]`
-
-    **Story Points:** `1`
-
-    ![](images/100/Picture100-19.png)
-
-### **STEP 8**: Create Issue for Displaying Twitter Feed
-
-- Click **New Issue**. Enter the following data in the New Issue page and click **Create Issue**.
-
-    ![](images/john.png)
-
-    **Summary:** `Display Twitter Feed in Table Format`
-
-    **Description:** `Display Twitter Feed in Table Format`
-
-    **Type:** `Feature`
-
-    **Owner:** `Select account provided in the dropdown [Logical Owner: John Dunbar]`
-
-    **Story Points:** `2`
-
-    ![](images/100/Picture100-20.png)
-
-- Click the back arrow ![](images/100/Picture100-21.png) on the **left side** of the window, or click on the **Issues** menu option to view all newly created issues.
-
-    ![](images/100/Picture100-22.png)
-
-
+## Great Work - All Done with Lab100!
+**You are ready to move on to the next lab. You may now close this tab.**

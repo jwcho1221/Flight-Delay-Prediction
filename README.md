@@ -37,7 +37,7 @@ To learn more about this workshop please watch the video below.
 ![](images/common/cloud_ready.jpg)
 
 ### Step 2: Navigate to Lab 100
-
+- Begin working on [Lab 100](LabGuide100.md)
 - You can see a list of Lab Guides by clicking on the Menu Icon in the upper left corner of the browser window. You're now ready to continue with Lab 100.
 
  ![](images/common/WorkshopMenu.png)

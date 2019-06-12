@@ -20,6 +20,7 @@ To learn more about this workshop please watch the video below.
 - Connect the OAC instance to the ADW instance to access the datasets
 - Build Machine Learning models in OAC which is “no-code” development platform 
 - Build and Apply Machine Learning Models in Oracle Machine Learning Tool (OML) which is built-in tool in ADW 
+- Make Visualization using OAC 
 
 ## Required Artifacts
 - The following lab requires an Oracle Public Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.

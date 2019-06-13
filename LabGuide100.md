@@ -1,4 +1,4 @@
-Getting Started with Autonomous Data Warehouse (ADW) and Oracle Machine Learning (OML)
+Getting Started with Autonomous Data Warehouse (ADW)
 ----------------------------------------------------------------------------
 
 ![](images/100/Picture100-lab.png)  
@@ -6,21 +6,19 @@ Updated: January 4, 2019
 
 ## **Introduction**
 
-This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and the new Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and create a new OML user.
-
+This is the first of several labs that are part of the **Predicting Flight Delays with Oracle Machine Learning & Autonomous Data Warehouse Cloud Service** workshop. This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance during this lab. 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
--   Learn how to provision a new Autonomous Data Warehouse
--   Learn how to create OML Users
+-   Learn how to provision a new Autonomous Data Warehouse (ADW) 
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-# Provision Autonomous Data Warehouse (ADW) and Create Users in Oracle Machine Learning (OML)
+# Provision Autonomous Data Warehouse (ADW)
 
-## Part 1. Provisioning an ADW Instance
+## Provisioning an ADW Instance
 
 
 In this section you will be provisioning an ADW instance using the cloud console.

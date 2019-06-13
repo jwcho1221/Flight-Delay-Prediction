@@ -48,15 +48,15 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 ![](./images/100/Picture100-26.jpg)
 
--  Specify a memorable display name for the instance. Also specify your database's name, for this lab use ADWFINANCE.
+-  Specify a memorable display name for the instance. Also specify your database's name, for this lab use **ADW_FlightDelay**.
 
 ![](./images/100/Picture100-27.jpeg)
 
--  Next, select the number of CPUs and storage size. Here, we use 4 CPUs and 1 TB of storage.
+-  Next, select the number of CPUs and storage size. Here, we use **1 CPU** and **1 TB of storage**.
 
 ![](./images/100/Picture100-28.jpeg)
 
--  Then, specify an ADMIN password for the instance, and a confirmation of it. Make a note of this password.
+-  Then, specify an **ADMIN password** for the instance, and a confirmation of it. Make a note of this password.
 
 ![](./images/100/Picture100-29.jpeg)
 
@@ -74,7 +74,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 -  You now have created your first Autonomous Data Warehouse instance. Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-![](./images/100/Picture100-38.JPG)
+![](./images/100/Picture100-33.jpeg)
 
 
 

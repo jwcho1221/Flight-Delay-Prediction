@@ -80,12 +80,11 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 ### STEP 3: Download the Data File to Your Local Computer
 
-For this lab you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport. If you want to follow steps to make this data file integrating flight.csv, weather.csv and aircraft.csv files, //// go to optional lab 600 . 
+For this lab you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport. **If you want to follow steps to make this data file integrating flight.csv, weather.csv and aircraft.csv files, //// go to optional lab 600 . **
 
 
 ### **STEP 4: Load the data file to the ADW Instance using SQL Developer Data Import Wizard**
 
-// sql developer data import wizard 
 - Click **Tables** in your user schema object tree. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select **Import Data**. 
 
 ![](./images/200/Picture200-import.jpg)
@@ -94,32 +93,35 @@ For this lab you will need a data file. Click [here](./files/datasets/Int_Flight
 
   - Select Local File as source for the data load
 
-  - Click the browse button and navigate to the Int_Flights_Aircraft_Weather.csv file 
+  - Click the browse button and navigate to the Int_Flights_Aircraft_Weather.csv file which you unzipped before 
   
-After selecting the file, you can preview the data and select the appropriate file formats. You will see that the data preview is interactive and changes according to your selection.
-
-When you are satisfied with the file content view, click **NEXT**.
+After selecting the file, you can preview the data and select the appropriate file formats. You will see that the data preview is interactive and changes according to your selection. When you are satisfied with the file content view, click **NEXT**.
 
  ![](./images/200/Picture200-import2.jpg)
   
 
-On Step 2 of the Import Wizard, you control the import method and parameters. Leave the Import Method as Insert. Enter **Int_Flights_Aircraft_Weather** as your target table name, this table will be created by the import wizard. Click **NEXT**.
+On Step 2 of the Import Wizard, you control the import method and parameters. Leave the Import Method as Insert. 
+- Enter **Int_Flights_Aircraft_Weather** as your target table name, this table will be created by the import wizard. Click **NEXT**.
 
 ![](./images/200/Picture200-import3.jpg)
 
 
-The Choose Columns screen lets you select the columns you want to import. Leave the defaults and click NEXT.
+- The Choose Columns screen lets you select the columns you want to import. Leave the defaults and click **NEXT**.
 
 ![](./images/200/Picture200-import4.jpg)
 
-The column definition screen allows you to set the column names and data types for your new table. You can change these if you need to. For this exercise leave them as default and click **NEXT**.
+
+- The column definition screen allows you to set the column names and data types for your new table. You can change these if you need to. For this exercise leave them as default and click **NEXT**.
 
 ![](./images/200/Picture200-import5.jpg)
 
-Click **FINISH** to load the data into your newly created table **Int_Flights_Aircraft_Weather**. 
+- Click **FINISH** to load the data into your newly created table **Int_Flights_Aircraft_Weather**. 
+
+*Note: This table has about 1M rows. It will may take about 5 mins to import the table.*
 
 
 
+** Revise **
 
 
 -   Use the SQLDeveloper to import the [station_info.csv](./files/datasets/station_info.csv) dataset to a table (Station_Info) in the database.

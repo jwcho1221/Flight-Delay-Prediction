@@ -43,7 +43,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 -   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
 
-![](./images/100/Picture100-25.jpg) 
+![](./images/100/Picture100-25.png) 
 
 -  This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Select the root compartment, or another compartment of your choice.
 

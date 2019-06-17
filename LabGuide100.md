@@ -1,4 +1,4 @@
-Getting Started with Autonomous Data Warehouse (ADW)
+# Getting Started with Autonomous Data Warehouse (ADW)
 ----------------------------------------------------------------------------
 
 ![](images/100/Picture100-lab.png)  

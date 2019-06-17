@@ -12,13 +12,14 @@ This is the first of several labs that are part of the **Predicting Flight Delay
 
 ## Objectives
 -   Learn how to provision a new Autonomous Data Warehouse (ADW) 
+-   Learn how to creae Oracle Machine Leaning (OML) Notebook Users
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 # Provision Autonomous Data Warehouse (ADW)
 
-## Provisioning an ADW Instance
+## Part 1. Provisioning an ADW Instance
 
 
 In this section you will be provisioning an ADW instance using the cloud console.
@@ -40,9 +41,9 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 ### **STEP 2: Create an ADW Instance**
 
--   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
+-   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**images/LabGuide100-4797549d.png
 
-![](images/LabGuide100-4797549d.png)
+![](./images/100/Picture100-25.jpg) 
 
 -  This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Select the root compartment, or another compartment of your choice.
 
@@ -77,29 +78,19 @@ In this section you will be provisioning an ADW instance using the cloud console
 ![](./images/100/Picture100-33.jpeg)
 
 
-
-
-
-## Part 2. Creating an OML Users
-
+## Part 2. Creating OML Users
 
 ### **STEP 3: Creating OML Users**
 
 - Click the **Service Console** button on your Autonomous Data Warehouse details page.
 
-![](images/LabGuide100-2ba02578.png)
+![](./images/100/Picture100-34.jpeg)
 
 - Click the **Administration** tab and click **Manage Oracle ML Users** to go to the OML user management page.
 
-![](images/LabGuide100-18cd319d.png)
+![](./images/100/Picture100-35.jpeg)
 
 This will open a new tab within your browser that asks you for a username and password.
-
--   Enter **admin** as the username and use the password you specified when provisioning your ADWC instance.
-
-![](./images/100/Picture700-4.png)
-
-**Note** that you do not have to go to this page using the same steps every time, you can bookmark this Oracle ML Notebook Admin URL and access it directly later.
 
 -   Click **Create** button to create a new OML user. Note that this will also create a new database user with the same name. This newly created user will be able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user (*for this lab you can use your own personal email address*) when creating the user.
 

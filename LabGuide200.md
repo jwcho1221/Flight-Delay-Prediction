@@ -12,7 +12,8 @@ This lab walks you through the steps to load datasets from local file system int
 ## Objectives
 -   Learn how to connect to your new Autonomous Data Warehouse using SQL Developer
 -   Learn how to use the SQL Developer Data Import Wizard to load datasets
--   Learn how to prepare datasets for training, validating and applying the machine learning models
+-   Learn how to prepare datasets for training machine learning model in OAC 
+-   Learn how to grant privileges to the OML User to Access All Datasets
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
@@ -133,7 +134,7 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 
 ### STEP 6: Grant Privileges to the OML User to Access All Datasets
 
--   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User which we created on previous lab. 
+-   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User (omluser1) which we created on previous lab. 
 
 
 

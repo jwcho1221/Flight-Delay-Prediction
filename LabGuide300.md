@@ -105,7 +105,7 @@ In this section you will create an OAC instance.
 
 -   You should fill the following connection fields, then click **Save**:
 
-  -   **Connection Name:** Type a name for this connection (e.g. FlightDelayPrediction)
+    - **Connection Name:** Type a name for this connection (e.g. FlightDelayPrediction)
 
   -   **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
 

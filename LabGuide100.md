@@ -90,7 +90,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 ![](./images/100/Picture100-35.jpeg)
 
-This will open a new tab within your browser that asks you for a username and password.
+This will open OML user Administration page as a new tab within your browser. 
 
 -   Click **Create** button to create a new OML user. Note that this will also create a new database user with the same name. This newly created user will be able to use the OML notebook application. Note that you can also enter an email address to send an email confirmation to your user (*for this lab you can use your own personal email address*) when creating the user.
 
@@ -100,8 +100,7 @@ This will open a new tab within your browser that asks you for a username and pa
 
 ![](./images/100/Picture700-7.png)
 
--   Below is the email which each user receives welcoming them to the OML application. It includes a direct link to the OML application
-for that user which they can bookmark.
+-   Below is the email which each user receives welcoming them to the OML application. It includes a direct link to the OML application for that user which they can bookmark.
 
 ![](./images/100/Picture700-8.png)
 
@@ -113,8 +112,7 @@ for that user which they can bookmark.
 
 ![](./images/100/Picture700-10.png)
 
-You will use these two users later in this workshop.
-
+You will use **omluser1** later in this workshop. 
 
 
 ## Great Work - All Done with Lab100!

@@ -201,7 +201,6 @@ Once the Data Flow and model are saved, we can run the model that we had trained
 
 - download and upload .dvd 
 
-![](./images/300/Picture300-58.png)
 
 
 find project 59

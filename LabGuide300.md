@@ -5,13 +5,15 @@ Updated: January 4, 2019
 
 ## Introduction
 
-This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to the instance of ADW you created. In addition, we will demonstrate how to build machine learning models and how to find out which model fits flight delay prediction project the best in OAC which is "no-code" development platform. 
+This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to the instance of ADW you created. In addition, we will demonstrate how to build machine learning models and how to find out which model fits flight delay prediction the best in OAC which is "no-code" development platform. 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
--   Learn how to provision a new Oracle Analytics Cloud Instance
--   Learn how to connect the OAC instance to your to the ADW
+-   Learn how to provision a new Oracle Analytics Cloud (OAC) Instance
+-   Learn how to connect the OAC instance to the instance of your ADW
+-   Learn how to build machine learning models in OAC
+-   Learn how to find out which ML model fits the flight delay prediction the best in OAC 
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
@@ -103,23 +105,18 @@ In this section you will create an OAC instance.
 
 -   You should fill the following connection fields, then click **Save**:
 
--   **Connection Name:** Type a name for this connection (e.g. ADWDBBIKESHARE)
+  -   **Connection Name:** Type a name for this connection (e.g. FlightDelayPrediction)
 
--   **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
+  -   **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
 
--   **Username:** Admin (the username you created during the ADW provisioning)
+  -   **Username:** Admin (the username you created during the ADW provisioning)
 
--   **Password:** The password you specified during provision of your ADW instance
+  -   **Password:** The password you specified during provision of your ADW instance
 
--   **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  dbbikeshare_high)
+  -   **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_high)
 
 ![](images/300/Picture300-33-updated.png)
 
-
-
--   You can see your connection listed under the Connections tab in the Data page.
-
-![](./images/300/Picture300-34.png)
 
 
 
@@ -137,8 +134,6 @@ In this section you will create an OAC instance.
 
 -   Select the **ADMIN** user from the list of users to import the datasets prepared in the SQL Developer.
 
-![](./images/300/Picture300-43.png)
-
 
 Now we should import the **STATION_INFO** and **STATION_ST_WTH_TRAINING** tables prepared in the SQL Developer to our OAC instance. We need the **STATION_INFO** table for creating the graphs and the **STATION_ST_WTH_TRAINING** table for training the ML model in OAC. In next steps, we show you how to import the **STATION_ST_WTH_TRAINING** table. You can repeat the same steps to import the **STATION_INFO** table.
 
@@ -155,19 +150,7 @@ Now we should import the **STATION_INFO** and **STATION_ST_WTH_TRAINING** tables
 
 ![](./images/300/Picture300-46.png)
 
--   When the data set is loaded, change the **STATIONID** column from **Measure** type to **Attribute** type. In order to do so, click on the # sign next to the column name and select **Attribute** from the drop-down menu.
-
-![](./images/300/Picture300-47.png)
-
-
--    Then click on **Apply Script**.
-
-![](./images/300/Picture300-48.png)
-
-
--   After importing all tables, you can see them under the **Data Set** tab in the **Data** section.
-
-![](./images/300/Picture300-45.png)
+// picture from 47 
 
 
 ## Great Work - All Done with Lab300!

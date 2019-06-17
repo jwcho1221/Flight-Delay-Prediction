@@ -23,7 +23,7 @@ Please use SQL Developer version 18.3 or later as this version contains enhancem
 
 # Connect to ADW and Load Datasets to the ADW instance using SQL Developer
 
-## Part 1. Connect SQL Developer to the ADW instance
+## Part 1. Connect SQL Developer to the ADW Instance
 In this section you will connect the SQL Developer to the ADW instance that you provisioned in Lab 100.
 
 
@@ -44,7 +44,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 ![](./images/200/Picture200-16.jpg)
 
 
-### **STEP 2: Connect to the database using SQL Developer**
+### **STEP 2: Connect to the Database using SQL Developer**
 Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 
 -   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
@@ -78,12 +78,12 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 ## Part 2. Load Data File to the ADW Instance
 
-### STEP 3: Download the Data File to Your Local Computer
+### **STEP 3: Download the Data File to Your Local Computer**
 
 For this lab you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport. **If you want to follow steps to make this data file integrating flight.csv, weather.csv and aircraft.csv files, //// go to optional lab 600 . **
 
 
-### **STEP 4: Load the data file to the ADW Instance using SQL Developer Data Import Wizard**
+### **STEP 4: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
 
 - Click **Tables** in your user schema object tree. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select **Import Data**. 
 
@@ -120,43 +120,18 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 *Note: This table has about 1M rows. It will may take about 5 mins to import the table.*
 
 
+## Part 3. Create Data for Machine Learning Training in Oracle Analytics Cloud (OAC)
 
-** Revise **
+### **STEP 5: Create Data for ML Training in OAC**
 
-
--   Use the SQLDeveloper to import the [station_info.csv](./files/datasets/station_info.csv) dataset to a table (Station_Info) in the database.
-
--   Use the SQLDeveloper to import the [station_status_weather.csv](./files/datasets/station_status_weather.csv) dataset to a table (Station_Status_Weather) in the database. Make sure the LAST_REPORTED column is created as a DATE type column. (Note that this table has ~1M rows, so it may take about 30mins to import the table using the SQL Developer wizard.)
+-   Copy and paste [this code snippet](./files/scripts/data_OAC.sql) to a SQL Developer worksheet and run the script. This code is to create the train portion of the data which you will use to train a ML model in OAC. 
 
 
+## Part 4. Grant Privileges to the OML User to Access All Datasets
 
+### STEP 6: Grant Privileges to the OML User to Access All Datasets
 
-
-
-
-
-
-
-
-### **STEP 4: Grant Privileges to the OML User to Access Datasets** // create new user and grant it to .... 
-In order to avoid running into an access error when you run the code in OML, grant all privleges to the OML user for the tables you created in the database.
-
--   Under your connection in the SQL Developer, right-click on **Station_Info** table, select **Privileges** and then select **Grant**.
-
-![](./images/200/Picture200-41.png)
-
--   In the popped screen, select your OML user in the **Uers/Roles** field, mark **Grant ALL** option and click on **Apply**.
-
-![](./images/200/Picture200-42.png)
-
--   You should see a message indicating that your action was successful. Repeat the same steps to also grant privileges on the table **Station_Status_Weather**.
-
-![](./images/200/Picture200-43.png)
-
-
-
-### **STEP 5: Prepare the Data for Training ML Models in OAC**
--   Copy and paste the code snipper in [data_prep.sql](./files/scripts/data_prep.sql) file to your SQL Developer worksheet and run the script. This code prepares the portion of data that you will need for training an ML model in OAC .
+-   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User which we created on previous lab. 
 
 
 

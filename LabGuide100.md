@@ -41,7 +41,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 
 ### **STEP 2: Create an ADW Instance**
 
--   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**images/LabGuide100-4797549d.png
+-   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
 
 ![](./images/100/Picture100-25.jpg) 
 

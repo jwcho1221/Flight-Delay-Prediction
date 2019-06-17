@@ -106,23 +106,17 @@ In this section you will create an OAC instance.
 -   You should fill the following connection fields, then click **Save**:
 
     - **Connection Name:** Type a name for this connection (e.g. FlightDelayPrediction)
-
-  -   **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
-
-  -   **Username:** Admin (the username you created during the ADW provisioning)
-
-  -   **Password:** The password you specified during provision of your ADW instance
-
-  -   **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_high)
+    - **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
+    - **Username:** Admin (the username you created during the ADW provisioning)
+    - **Password:** The password you specified during provision of your ADW instance
+    - **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_high)
 
 ![](images/300/Picture300-33-updated.png)
 
 
+## Part 3. Upload Dataset from ADW to OAC
 
-
-## Part 3. Import Datasets from ADW to OAC
-
-### **STEP 4: Import the Training Datasets for the ML Model to OAC**
+### **STEP 4: Upload the Training Dataset for the ML Model to OAC**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -138,7 +132,7 @@ In this section you will create an OAC instance.
 Now we should import the **STATION_INFO** and **STATION_ST_WTH_TRAINING** tables prepared in the SQL Developer to our OAC instance. We need the **STATION_INFO** table for creating the graphs and the **STATION_ST_WTH_TRAINING** table for training the ML model in OAC. In next steps, we show you how to import the **STATION_ST_WTH_TRAINING** table. You can repeat the same steps to import the **STATION_INFO** table.
 
 
--   Select the desired table (**STATION_ST_WTH_TRAINING**) from the list.
+-   Select the desired table (**OAC_DATASET**) from the list.
 
 ![](./images/300/Picture300-44.png)
 
@@ -146,11 +140,75 @@ Now we should import the **STATION_INFO** and **STATION_ST_WTH_TRAINING** tables
 
 ![](./images/300/Picture300-45.png)
 
--   Give a name to the table (**STATION_ST_WTH_TRAINING**) and add it to your data set.
+-   Give a name to the table (**OAC_DATASET**) and add it to your data set.
 
 ![](./images/300/Picture300-46.png)
 
 // picture from 47 
+
+
+## Part 4. Build Machine Learning Model in OAC 
+
+### **STEP 5: Create Data Flow to Create Machine Learning Models**
+
+-   Click data flow to create the machine learning model. 
+
+![](./images/300/Picture300-47.png)
+
+-   Pick dataset (**OAC_DATASET**) which you uploaded on previous step. 
+
+![](./images/300/Picture300-48.png)
+
+-   Using “+” button, you can add next steps to build machine learning model. You need to select some columns, so click “select columns.” Then, since we need all columns, you will just select all of them. 
+
+![](./images/300/Picture300-49.png)
+
+- Select proper statistical algorithm for flight delay prediction project. Here, OAC provides four different classes of machine learning. In this case, you want to predict numerical variable of flight delay. So, let’s click the train numeric prediction model. 
+
+![](./images/300/Picture300-50.png)
+
+- Here, we have four different statistical algorithms built in OAC. Let’s say I am not someone who is familiar with machine learning. So, I just pick one of them. In this demo, I will pick linear regression algorithm. 
+
+![](./images/300/Picture300-51.png)
+
+
+- Once we pick the algorithm, as you can see, all of the parameters are set by default except for the target value. 
+Here, we want to predict flight delay time, so I will set “ARRDELAY” column as target. 
+
+![](./images/300/Picture300-52.png)
+
+Then, we just need to save both our model and the Data Flow.
+
+![](./images/300/Picture300-53.png)
+
+![](./images/300/Picture300-54.png)
+
+Once the Data Flow and model are saved, we can run the model that we had trained using the data we selected in the first step. It will take only about 2-3 mins.
+
+![](./images/300/Picture300-55.png)
+
+- done 
+
+![](./images/300/Picture300-56.png)
+
+
+## Part 5. Find out which ML model fits flight delay prediction project the best using MAE 
+
+### **STEP 6: Find out which ML model fits flight delay prediction project the best using MAE **
+
+- import project Upload .dvd 
+![](./images/300/Picture300-57.png)
+
+- download and upload .dvd 
+
+![](./images/300/Picture300-58.png)
+
+
+find project 59
+open project 60
+Narate 61
+present 62+63 
+
 
 
 ## Great Work - All Done with Lab300!

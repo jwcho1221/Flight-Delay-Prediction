@@ -1,12 +1,11 @@
-# Getting Started with Oracle Analytics Cloud (OAC)
+# Building Machine Learning Models in Oracle Analytics Cloud (OAC)  
 
 ![](images/300/Picture300-lab.png)  
 Updated: January 4, 2019
 
 ## Introduction
 
-This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to your Autonomous Data Warehouse (ADW) instance.
-
+This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to the instance of ADW you created. In addition, we will demonstrate how to build machine learning models and how to find out which model fits flight delay prediction project the best in OAC which is "no-code" development platform. 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 

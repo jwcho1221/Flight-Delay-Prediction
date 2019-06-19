@@ -11,7 +11,7 @@ This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC
 
 ## Objectives
 -   Learn how to provision a new Oracle Analytics Cloud (OAC) Instance
--   Learn how to connect the OAC instance to the instance of your ADW
+-   Learn how to connect the OAC instance to the instance of ADW you created 
 -   Learn how to build machine learning models in OAC
 -   Learn how to find out which ML model fits the flight delay prediction the best in OAC 
 
@@ -23,7 +23,7 @@ This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC
 # Provision Oracle Analytics Cloud (OAC) and Connect to Autonomous Data Warehouse (ADW)
 
 ## Part 1. Create an OAC Instance
-In this section you will create an OAC instance.
+In this section, you will create an OAC instance.
 
 
 ### **STEP 1: Sign in to Oracle Cloud**
@@ -60,28 +60,33 @@ In this section you will create an OAC instance.
 
 ![](./images/300/AnalyticsInstance.png)
 
--   Provide all the required information (fields specified by \*) and then click on **Next**.
-
+-   Enter the following information and then click on **Next**.
+    - **Instance Name:** Enter a name for your service instance (e.g. OAC_FlightDelay)
+    - **Notification Email:** Enter the email address of the person you want to notify when this service is ready to use and receive other status updates about this service in the future
+    - **Region:** Select the region where you want to deploy Oracle Analytics Cloud (e.g. us-Phoenix-1)
+    - **License Type:** Select whether you want to use your on-premises license with Oracle Analytics Cloud and to be charged the Bring Your Own License (BYOL) rate or subscribe to a new license for Oracle Analytics Cloud
+    - **Edition:** Select the edition that you want to use (e.g. Enterprise Edition) 
+    - **Feature Set:** Select the features that you want to deply. The options available to you depend on the deition you are subscribed to. (e.g. Business Intelligence) 
+    
 ![](./images/300/Picture300-24.png)
 
 -   After validating your configuration, click on **Create**.
 
 ![](./images/300/Picture300-25.png)
 
--   It will take a few minutes until your instance is fully provisioned and ready to use. Note the Status and the sign which indicate that the service is being creating. Wait until this process is fully completed.
+-   It will take 20 minutes to create the instance. If you enter the notification email, Oracle sends an email to the email address when your servie is ready.
 
 ![](./images/300/OACprovision.png)
 
--   After a few minutes refresh your page and you will see the status and the sign are disappeared. Now your OAC instance is ready. In order to access your instance, click on the hamburger icon on the right side of your instance.
+-   Now your OAC instance is ready. In order to access your instance, click **Manage this instnace** on the right side of your instance.
 
 ![](./images/300/expand.png)
 
--   Now click on Analytics URL which redirects you to a new page.
+-   Then, click **Oracle Analytics Cloud URL**. It will open a new tab within your browser. 
 
 ![](./images/300/OACURL.png)
 
-
--   Welcome to the Oracle Analytic Cloud! Enjoy exploring it!
+-   This is main page of Oracle Analytics Cloud (OAC) which is "no-code" development platform. 
 
 ![](./images/300/Picture300-29.png)
 
@@ -101,7 +106,6 @@ In this section you will create an OAC instance.
 ![](./images/300/Picture300-32.png)
 
 -   Complete all the required fields in the wizard as described in the table below and Save the connection. Note that you need the ADW instance **Wallet** in order to be able to complete these fields (similar to connecting the SQL Developer to the ADW instance). Please refer to the instruction in **Lab100** for accessing the **Wallet**.
-
 
 -   You should fill the following connection fields, then click **Save**:
 
@@ -126,75 +130,72 @@ In this section you will create an OAC instance.
 
 ![](./images/300/Picture300-42.png)
 
--   Select the **ADMIN** user from the list of users to import the datasets prepared in the SQL Developer.
-
-
-Now we should import the **STATION_INFO** and **STATION_ST_WTH_TRAINING** tables prepared in the SQL Developer to our OAC instance. We need the **STATION_INFO** table for creating the graphs and the **STATION_ST_WTH_TRAINING** table for training the ML model in OAC. In next steps, we show you how to import the **STATION_ST_WTH_TRAINING** table. You can repeat the same steps to import the **STATION_INFO** table.
-
-
--   Select the desired table (**OAC_DATASET**) from the list.
+-   Select the **ADMIN** schema from the list of users, then find and click the dataset (**OAC_DATASET**) that you want to use to train the model.  
 
 ![](./images/300/Picture300-44.png)
 
--   Add all columns to your selection.
+-   Click **Add All** to add all columns. 
 
 ![](./images/300/Picture300-45.png)
 
--   Give a name to the table (**OAC_DATASET**) and add it to your data set.
+-   Then, type a name for the dataset (**OAC_DATASET**). 
 
 ![](./images/300/Picture300-46.png)
-
-// picture from 47 
 
 
 ## Part 4. Build Machine Learning Model in OAC 
 
 ### **STEP 5: Create Data Flow to Create Machine Learning Models**
+Once you have created connection and uploaded dataset from ADW to OAC successfully, let's create **Data Flow** to build machine learning model. 
 
--   Click data flow to create the machine learning model. 
+-   On the main page of OAC, click **Data Flow** to create the machine learning model. 
 
 ![](./images/300/Picture300-47.png)
 
--   Pick dataset (**OAC_DATASET**) which you uploaded on previous step. 
+-   Pick the dataset (**OAC_DATASET**) which you uploaded on previous step. 
 
 ![](./images/300/Picture300-48.png)
 
--   Using “+” button, you can add next steps to build machine learning model. You need to select some columns, so click “select columns.” Then, since we need all columns, you will just select all of them. 
+-   Using “+” button, you can add next steps to build machine learning model. You need to select some columns, so click **select columns**. Then, since you need all columns, select all of them. 
 
 ![](./images/300/Picture300-49.png)
 
-- Select proper statistical algorithm for flight delay prediction project. Here, OAC provides four different classes of machine learning. In this case, you want to predict numerical variable of flight delay. So, let’s click the train numeric prediction model. 
+- Then, select proper statistical algorithm for flight delay prediction project. Here, OAC provides four different classes of machine learning. In this case, you want to predict numerical variable of flight delay. So, let’s click **the train numeric prediction model**. 
 
 ![](./images/300/Picture300-50.png)
 
-- Here, we have four different statistical algorithms built in OAC. Let’s say I am not someone who is familiar with machine learning. So, I just pick one of them. In this demo, I will pick linear regression algorithm. 
+- Here, for training numeric prediciton model, we have four different statistical algorithms built in OAC. Let’s suppose we are not someone who are familiar with machine learning. So, we will just pick one of them. (e.g. pick **linear regression algorithm**) 
 
 ![](./images/300/Picture300-51.png)
 
-
-- Once we pick the algorithm, as you can see, all of the parameters are set by default except for the target value. 
-Here, we want to predict flight delay time, so I will set “ARRDELAY” column as target. 
+- Once you pick the algorithm, all of the parameters are set by default except for the target value. Here, you want to predict flight delay time, so set **ARRDELAY** column as target. 
 
 ![](./images/300/Picture300-52.png)
 
-Then, we just need to save both our model and the Data Flow.
+- Then, we just need to **save** both our model and the Data Flow.
 
 ![](./images/300/Picture300-53.png)
 
 ![](./images/300/Picture300-54.png)
 
-Once the Data Flow and model are saved, we can run the model that we had trained using the data we selected in the first step. It will take only about 2-3 mins.
+- Once the Data Flow and model are saved, you can run the model that you had trained using the data you selected in the first step. It will take only about 2-3 mins.
 
 ![](./images/300/Picture300-55.png)
 
-- done 
+- Once you have run the model successfully, you will see the following message. 
 
 ![](./images/300/Picture300-56.png)
 
 
+
 ## Part 5. Find out which ML model fits flight delay prediction project the best using MAE 
 
-### **STEP 6: Find out which ML model fits flight delay prediction project the best using MAE **
+### **STEP 6: Find out which ML model fits flight delay prediction project the best using MAE**
+
+You can repeat the same process and create four different ML models for numeric prediction, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have created **ML_ModelQuality.dva** project including results of comparison among those models. From follwing steps, you will follow steps for importing **ML_ModelQuality.dva** project and finding out which model fits our problem the best on the .dva project. 
+
+
+In order to save our time, I have prepared this right here. I have created four different ml models in OAC. And then, to find out which model fits our problem the best, I have calculated MAE (Mean Absolute Error) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
 
 - import project Upload .dvd 
 ![](./images/300/Picture300-57.png)

@@ -192,7 +192,7 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 You can repeat the same process and create four different ML models for numeric prediction, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have saved statistical values resulted from each model in the project of  **ML_ModelQuality.dva**. From follwing steps, you will follow steps about how to import the project of **ML_ModelQuality.dva**  and find out which model fits our problem the best. 
 
 ### **STEP 6: Import the .dvd Project**
-- Click [ML_ModelQuality.dva](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download the project file to a directory on your local computer.
+- Click [ML_ModelQuality.dva](./files/project/ML_ModelQuality.dva) to download the project file to a directory on your local computer.
 
 - Click **Menu Page** button on the top of right side and select **Import Project**. Then, click **Select File** and import the downloaded .dvd file. 
 

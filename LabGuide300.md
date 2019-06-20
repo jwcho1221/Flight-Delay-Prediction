@@ -78,7 +78,7 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/OACprovision.png)
 
--   Now your OAC instance is ready. In order to access your instance, click **Manage this instnace** on the right side of your instance.
+-   Now your OAC instance is ready. In order to access your instance, click **Manage this Instnace** button on the right side of your instance.
 
 ![](./images/300/expand.png)
 
@@ -188,26 +188,39 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 
 
 
-## Part 5. Find out which ML model fits flight delay prediction project the best using MAE 
+## Part 5. Find Out Which ML Model Fits Flight Delay Prediction the Best 
+You can repeat the same process and create four different ML models for numeric prediction, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have saved statistical values resulted from each model in the project of  **ML_ModelQuality.dva**. From follwing steps, you will follow steps about how to import the project of **ML_ModelQuality.dva**  and find out which model fits our problem the best. 
 
-### **STEP 6: Find out which ML model fits flight delay prediction project the best using MAE**
+### **STEP 6: Import the .dvd Project**
+- Click [ML_ModelQuality.dva](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download the project file to a directory on your local computer.
 
-You can repeat the same process and create four different ML models for numeric prediction, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have created **ML_ModelQuality.dva** project including results of comparison among those models. From follwing steps, you will follow steps for importing **ML_ModelQuality.dva** project and finding out which model fits our problem the best on the .dva project. d
+- Click **Menu Page** button on the top of right side and select **Import Project**. Then, click **Select File** and import the downloaded .dvd file. 
 
-
-In order to save our time, I have prepared this right here. I have created four different ml models in OAC. And then, to find out which model fits our problem the best, I have calculated MAE (Mean Absolute Error) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
-
-- import project Upload .dvd 
 ![](./images/300/Picture300-57.png)
 
-- download and upload .dvd 
+### **STEP 7: Find Out Which ML Model Fits Flight Delay Prediction the Best**
+
+- You can find the imported project under the section **Projects**. 
+
+![](./images/300/Picture300-59.png)
+
+- Let's open the project. 
+
+![](./images/300/Picture300-60.png)
+
+- Then, click the tap of **Narate** and click **Present**. 
+![](./images/300/Picture300-61.png)
+
+- Now, you can see the graph as presentation mode as below: 
+
+![](./images/300/Picture300-63.png)
 
 
+We have created four different ml models in OAC. And then, to find out which model fits our problem the best, we have calculated Mean Absolute Error (MAE) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
 
-find project 59
-open project 60
-Narate 61
-present 62+63 
+Here, we can see that the Linear Regression has the lowest MAE of 13. Generally speaking, 13 is a small value for MAE that represents good model quality. Also, you can see that the Linear Regression has the lowest MAE of our four models, meaning it is the best one here. Then, we can decide to use linear regression model to predict flight delay. 
+
+But, what if you want to operationalize ML and build ML model on the entire dataset with more parameter options? You can use oracle Machine Learning Notebook (OML). In the next lab, you will follow steps for building ML model in OML. 
 
 
 

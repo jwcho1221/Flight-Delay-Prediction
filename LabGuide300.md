@@ -86,7 +86,7 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/OACURL.png)
 
--   This is main page of Oracle Analytics Cloud (OAC) which is "no-code" development platform. 
+-   This is main page of **Oracle Analytics Cloud (OAC)** which is "no-code" development platform. 
 
 ![](./images/300/Picture300-29.png)
 
@@ -138,12 +138,12 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/Picture300-45.png)
 
--   Then, type a name for the dataset (**OAC_DATASET**). 
+-   Then, type a name for the dataset (**OAC_DATASET**) and click **Add**.
 
 ![](./images/300/Picture300-46.png)
 
 
-## Part 4. Build Machine Learning Model in OAC 
+## Part 4. Build Machine Learning Models in OAC 
 
 ### **STEP 5: Create Data Flow to Create Machine Learning Models**
 Once you have created connection and uploaded dataset from ADW to OAC successfully, let's create **Data Flow** to build machine learning model. 

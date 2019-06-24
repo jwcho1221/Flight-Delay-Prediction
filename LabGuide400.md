@@ -17,7 +17,7 @@ This lab walks you through the steps to build a linear regression model in Oracl
 
 # Building a Machine Learning Model in Oracle Machine Learning (OML) Notebook
 
-## Part 1. Import the Notebook (.json file) to OML 
+## Part 1. Import Notebook File to OML 
 
 ### **STEP 1: Sign into OML**
 
@@ -39,15 +39,39 @@ This lab walks you through the steps to build a linear regression model in Oracl
 
 ![](./images/400/Picture400-2.jpeg)
 
-- Once you have successfully signed in to OML the application home page will be displayed.
+
+### **STEP 2: Import Notebook File (Flight Delay Predictino.json) to OML **
+
+- Once you have successfully signed in to OML the application home page will be displayed. Let's click **Notebooks**. 
 
 ![](./images/400/Picture400-3.jpeg)
 
 
+- In the **Notebooks** section, click on **Import** and import the [**Flight Delay Prediction.json**](./files/scripts/Flight Delay Prediction.json) file.
+
+![](./images/400/Picture400-4.jpeg)
+
+
+## Part 2. Run the imported OML Notebook
+
+### **STEP 1: Run Each Paragraph in the OML Notebook**
+
+- Let's open the imported OML Notebook (**Flight Delay Prediction.json**). Then, select **%md** and one of the **%sql and %script** interpreters. 
+
+![](./images/400/Picture400-5.jpeg)
+
+- Now, run each paragraph in the OML Notebook (**Flight Delay Prediction.json**). 
 
 
 
--   Next, you should choose the class of machine learning algorithms applicable to this problem. In this case, you need a numerical prediction algorithm, so choose the corresponding class of algorithms.
+- each paragrapph 
+
+
+
+
+
+
+Next, you should choose the class of machine learning algorithms applicable to this problem. In this case, you need a numerical prediction algorithm, so choose the corresponding class of algorithms.
 
 ![](./images/400/Picture400-13.png)
 

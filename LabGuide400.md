@@ -40,7 +40,7 @@ This lab walks you through the steps to build a linear regression model in Oracl
 ![](./images/400/Picture400-2.jpeg)
 
 
-### **STEP 2: Import Notebook File (Flight Delay Predictino.json) to OML **
+### **STEP 2: Import Notebook File (Flight Delay Predictino.json) to OML**
 
 - Once you have successfully signed in to OML the application home page will be displayed. Let's click **Notebooks**. 
 
@@ -56,65 +56,33 @@ This lab walks you through the steps to build a linear regression model in Oracl
 
 ### **STEP 3: Run Each Paragraph in the OML Notebook**
 
-- Let's open the imported OML Notebook (**Flight Delay Prediction.json**). Then, select **%md** and one of the **%sql and %script** interpreters. 
+- Let's open the imported OML Notebook (.json). Then, click **interpreter binding** and select **%md** and one of the **%sql and %script** interpreters. 
 
 ![](./images/400/Picture400-5.jpeg)
 
-- Now, run each paragraph in the OML Notebook (**Flight Delay Prediction.json**). 
+- Now, run each paragraph in the OML Notebook (**Flight Delay Prediction.json**) at a time and make sure each paragraph is completed without error. Since you learned that linear regression algorithm is one of the best models, you will build the machine learning model with linear regression algorithm on OML. You will also be using the DBMS pl/sql packages, which are included in ADW as well. These packages allow you to build machine learning models with minimal coding. It will take about 15 minutes to run the entire paragraph in the OML Notebook. Refer to below explanations about each paragrph. 
 
+- Here, all data are from 2008. Let’s imagine today is 10/31/2008 and you want to predict future flight delays in November and December of 2008. 
+- Paragraphs 1 & 2: These are to segment the data into training, validation, and prediction parts. 
+![](./images/400/Picture400-6.jpeg)
 
+- Paragraphs 3, 4 & 5: These are to clean up any previously existing model objects with the same name as new model. Then, create setting table and set parameters to build linear regression model. 
+![](./images/400/Picture400-7.jpeg)
 
-- each paragrapph 
+- Paragraph 6: This is to train this model on the portion of data you created for training.
+![](./images/400/Picture400-8.jpeg)
 
+- Paragraph 7,8 & 9: These are to show model setting information, attribute name on the model and statistics for each attribute.
+![](./images/400/Picture400-9.jpeg)
 
+- Paragraph 10: To validate our model, you will apply the trained model to the validation portion of the data. Then, store the result in a table in our autonomous data warehouse. Then, you will load it onto OAC for visualization on the following lab.
+![](./images/400/Picture400-10.jpeg)
 
+- Paragraph 11: You will use the model to predict flight delay at each airport and at any given time by applying the model to the future data.  This result is saved as table in ADW for visualization using OAC as well. You will load it onto OAC for visualtion on the following lab. 
+![](./images/400/Picture400-11.jpeg)
 
-
-
-Next, you should choose the class of machine learning algorithms applicable to this problem. In this case, you need a numerical prediction algorithm, so choose the corresponding class of algorithms.
-
-![](./images/400/Picture400-13.png)
-
--   Among the available built-in algorithms, select the **Linear Regression** model.
-
-![](./images/400/Picture400-14.png)
-
--   As you can see, all the variables except one are set by default. The only variable you need to specify in order to have a complete linear regression model is the target column. You can select the target column from the list of existing columns in the table. Since you want to predict the number of available bikes at each station, you should select the “AVIALABLEBIKES”.
-
-![](./images/400/Picture400-15.png)
-
--   Now, save both the model and the Data Flow.
-
-![](./images/400/Picture400-16.png)
-
--   Once the Data Flow is saved, you can click on **Run Data Flow**, which trains the model on the data you selected in the first step.
-
-![](./images/400/Picture400-17.png)
-
-
-
-
-## Part 2. Compare Different Machine Learning Models
-
-**Note:** In this section, you will compare different machine learning models to find the one which fits this problem the best. One way to do this is to repeate **Part 1** three more times and create other built-in machine learning models one by one. However, to simplify the process, we have already created all those models and the comparison between them in a DVA project. Next steps will shoe you how you can import that project and use it as a base for creating more graphs in the next labs.
-
-### **STEP 2: Import the .DVA Project**
-
--   Click on the hamburger icon on the top right side of the OAC home page and select **Import Project**.
-
-![](./images/400/Picture400-21.png)
-
--   Click on **Select File** and upload the [**BikeSharePrediction.dva**](./files/project/BikeSharePrediction.dva) file. Then click on **Import** to import the project to your OAC instance.
-
-![](./images/400/Picture400-22.png)
-
--   When the import is successful, a message will pop up. Click on **OK**.
-
-![](./images/400/Picture400-23.png)
-
--   You can see the project under the section **Projects**.
-
-![](./images/400/Picture400-24.png)
+- Paragraph 12: This is **optional**. Thanks to the DBMS_Scheduler package included in ADW, you can define repeating schedules, such as "every Tuesday and Friday at 4:00 p.m." or "the second Wednesday of every month.” Using DBMS_ Scheduler, you can get your machine learning model refreshed as new live data comes in, and the model can provide new recommendations. To  run this paragraph, you should define the parameters depend on your choice first. 
+![](./images/400/Picture400-12.jpeg)
 
 
 

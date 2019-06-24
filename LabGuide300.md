@@ -61,6 +61,7 @@ In this section, you will create an OAC instance.
 ![](./images/300/AnalyticsInstance.png)
 
 -   Enter the following information and then click on **Next**.
+
     - **Instance Name:** Enter a name for your service instance (e.g. OAC_FlightDelay)
     - **Notification Email:** Enter the email address of the person you want to notify when this service is ready to use and receive other status updates about this service in the future
     - **Region:** Select the region where you want to deploy Oracle Analytics Cloud (e.g. us-Phoenix-1)
@@ -78,7 +79,7 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/OACprovision.png)
 
--   Now your OAC instance is ready. In order to access your instance, click **Manage this Instnace** button on the right side of your instance.
+-   Now your OAC instance is ready. In order to access your instance, click **Manage this instance** button on the right side of your instance.
 
 ![](./images/300/expand.png)
 
@@ -97,7 +98,7 @@ In this section, you will create an OAC instance.
 
 ### **STEP 3: Connect OAC to ADW**
 
--   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
+-   In the Oracle Analytics Cloud main page, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
 
 ![](./images/300/Picture300-31.png)
 
@@ -113,14 +114,14 @@ In this section, you will create an OAC instance.
     - **Client Credentials:** Click on **‘Select’** and select the zipped **Wallet** file (The **cwallet.sso** file will be automatically extracted from the **Wallet** file)
     - **Username:** Admin (the username you created during the ADW provisioning)
     - **Password:** The password you specified during provision of your ADW instance
-    - **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_high)
+    - **Service Name:** Select your database name and desired service level (low, medium, high) from the drop down list. (e.g.  ADW_FlightDelay_HIGH)
 
 ![](images/300/Picture300-33-updated.png)
 
 
 ## Part 3. Upload Dataset from ADW to OAC
 
-### **STEP 4: Upload the Training Dataset for the ML Model to OAC**
+### **STEP 4: Upload Dataset from ADW to OAC to build ML Models**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -130,7 +131,7 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/Picture300-42.png)
 
--   Select the **ADMIN** schema from the list of users, then find and click the dataset (**OAC_DATASET**) that you want to use to train the model.  
+-   Select the **ADMIN** schema from the list of users, then pick the dataset (**OAC_DATASET**) that you want to use to train the model.  
 
 ![](./images/300/Picture300-44.png)
 
@@ -160,7 +161,7 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 
 ![](./images/300/Picture300-49.png)
 
-- Then, select proper statistical algorithm for flight delay prediction project. Here, OAC provides four different classes of machine learning. In this case, you want to predict numerical variable of flight delay. So, let’s click **the train numeric prediction model**. 
+- Then, select proper statistical algorithm for flight delay prediction project. Here, OAC provides four different classes of machine learning. In this case, you want to predict numerical variable of flight delay. So, let’s click **train numeric prediction model**. 
 
 ![](./images/300/Picture300-50.png)
 
@@ -182,7 +183,7 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 
 ![](./images/300/Picture300-55.png)
 
-- Once you have run the model successfully, you will see the following message. 
+- Once you have ran the model successfully, you will see the following message. 
 
 ![](./images/300/Picture300-56.png)
 
@@ -194,11 +195,9 @@ You can repeat the same process and create four different ML models for predicti
 ### **STEP 6: Import the ML_ModelQuality.dva Project File**
 - Click [ML_ModelQuality.dva](./files/project/ML_ModelQuality.dva) to download the project file to a directory on your local computer.
 
-- Click **Menu Page** button on the top of right side and select **Import Project**. Then, click **Select File** and import the downloaded ML_ModelQuality.dva file. 
+- Click **Menu Page** button on the top of right side and select **Import Project**. Then, click **Select File** and **import** the downloaded ML_ModelQuality.dva file. 
 
 ![](./images/300/Picture300-57.png)
-
-### **STEP 7: Find Out Which ML Model Fits Flight Delay Prediction the Best**
 
 - You can find the imported project under the section **Projects**. 
 
@@ -215,13 +214,13 @@ You can repeat the same process and create four different ML models for predicti
 
 ![](./images/300/Picture300-63.png)
 
+### **STEP 7: Find Out Which ML Model Fits Flight Delay Prediction the Best**
 
 We have created four different ml models in OAC. And then, to find out which model fits our problem the best, we have calculated Mean Absolute Error (MAE) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
 
 Here, we can see that the Linear Regression has the lowest MAE of 13. Generally speaking, 13 is a small value for MAE that represents good model quality. Also, you can see that the Linear Regression has the lowest MAE of our four models, meaning it is the best one here. Then, we can decide to use linear regression model to predict flight delay. 
 
 But, what if you want to operationalize ML and build ML model on the entire dataset with more parameter options? You can use oracle Machine Learning Notebook (OML). In the next lab, you will follow steps for building ML model in OML. 
-
 
 
 ## Great Work - All Done with Lab300!

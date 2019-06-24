@@ -1,38 +1,51 @@
-# Building Machine Learning Models in Oracle Analytics Cloud (OAC)
-
 ![](images/400/Picture400-lab.png)  
 Updated: January 4, 2019
 
 ## Introduction
 
-This lab walks you through the steps to create and train a machine learning model in the Oracle Analytic Cloud, without writing a single line of code. Also, we will show you a comparison between different machine learning models that you can create using OAC.
-
+This lab walks you through the steps to build a linear regression model in Oracle Machine Learning (OML) Notebook since we learned that linear regression algorithm is one of the best models on previous lab. 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
--   Learn how to create machine learning models in Oracle Analytics Cloud
--   Compare different machine learning models
-
+-   Learn how to build and apply machine learning model in Oracle Machine Learning (OML)
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
 
-# Build and Compare Machine Learning Models in Oracle Analytics Cloud (OAC)
+# Building a Machine Learning Model in Oracle Machine Learning (OML) Notebook
 
-## Part 1. Create Machine Learning Models in OAC
+## Part 1. Import the Notebook (.json file) to OML 
 
-### **STEP 1: Create a Linear Regression Model in OAC**
+### **STEP 1: Sign into OML**
 
--   In your OAC instance, click on **Create**, then select **Data Flow** in the wizard. Once the list of tables popped up, select the dataset we want to use for training the model (**STATION_ST_WTH_TRAINING** ).
+-   Go back to the Cloud Console and Click the **Service Console** button on your Autonomous Data Warehouse details page.
 
-![](./images/400/Picture400-11.png)
+![](./images/100/Picture100-34.jpeg)
 
--   Click on the small **+** to select the subset of columns that you need to use for training the model. Here you need every columns, so we select them all.
+-   Click the **Administration** tab and click **Manage Oracle ML Users** to go to the OML user management page. This will open OML user Administration page as a new tab within your browser.
 
-![](./images/400/Picture400-12.png)
+![](./images/100/Picture100-35.jpeg)
+
+
+- Click the **Home icon** on the top right of Oracle Machine Learning User administration page to go to OML home page.
+
+![](./images/400/Picture400-1.jpeg)
+
+
+- Sign in using your new user account **omluser1**. 
+
+![](./images/400/Picture400-2.jpeg)
+
+- Once you have successfully signed in to OML the application home page will be displayed.
+
+![](./images/400/Picture400-3.jpeg)
+
+
+
+
 
 -   Next, you should choose the class of machine learning algorithms applicable to this problem. In this case, you need a numerical prediction algorithm, so choose the corresponding class of algorithms.
 

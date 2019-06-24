@@ -47,7 +47,7 @@ This lab walks you through the steps to build a linear regression model in Oracl
 ![](./images/400/Picture400-3.jpeg)
 
 
-- In the **Notebooks** section, click on **Import** and import the [**Flight Delay Prediction.json**](./files/scripts/Flight Delay Prediction.json) file.
+- In the **Notebooks** section, click on **Import** and import the [**Flight Delay Prediction.json**](./files/scripts/Flight Delay Prediction.json).
 
 ![](./images/400/Picture400-4.jpeg)
 

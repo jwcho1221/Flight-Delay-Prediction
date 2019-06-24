@@ -54,7 +54,7 @@ This lab walks you through the steps to build a linear regression model in Oracl
 
 ## Part 2. Run the imported OML Notebook
 
-### **STEP 1: Run Each Paragraph in the OML Notebook**
+### **STEP 3: Run Each Paragraph in the OML Notebook**
 
 - Let's open the imported OML Notebook (**Flight Delay Prediction.json**). Then, select **%md** and one of the **%sql and %script** interpreters. 
 

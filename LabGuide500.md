@@ -1,79 +1,24 @@
-# Building Machine Learning Models in Oracle Machine Learning Tool (OML)
-
 ![](images/500/Picture500-lab.png)  
 Updated: January 4, 2019
 
 ## Introduction
-
-This lab walks you through the steps to create a linear regression model in the Oracle Machine Learning tool and apply it to the dataset in the Autonomous Datawarehouse. Also, we will show you how you can use the Oracle Analytics Cloud to visualize the results of the model created in OML.
-
+This lab walks you through the steps to visualize results of validation and prediction in Oracle Analytics Cloud (OAC).  
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 ## Objectives
--   Learn how to create machine learning models in Oracle Machine Learning Tool
 -   Learn how to visualize the results in Oracle Analytics Cloud
-
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
 
 
-# Learn to Build Machine Learning Modules in Oracle Machine Learning (OML) and Visualize in Oracle Analytics Cloud (OAC)
+# Visualizing results of Validation and Prediction in Oracle Analytics Cloud (OAC)
 
-## Part 1. Create a Linear Regression Model in OML
+## Part 1. Visualize Results of Validation in OAC. 
 
-### **STEP 1: Import the Notebook to OML**
-
--   Go back to the Cloud Console and open the Instances screen. Find your database, click the action menu and select **Service Console**.
-
-![](./images/500/Picture700-1.png)
-
--   Log in to the service with your admin password.
-
-![](./images/500/Picture700-2.png)
-
--   Go to the **Administration** tab and click **Manage Oracle ML Users** to go to the OML user management page - this page will allow you to manage OML users.
-
-![](./images/500/Picture700-3.png)
-
--   Click on the Home icon to go the OML login page.
-
-![](./images/500/Picture700-11.png)
-
--   Use the OML account that you created in **Lab 100** to sign in.
-
-![](./images/500/Picture700-12.png)
-
--   Once you have successfully signed in to OML the application home page will be displayed. Go to the **Notebook** section.
-
-![](./images/500/Picture500-16.png)
-
--   In the **Notebooks** section, click on **Import** and import the [**Bike Share Availability Prediction.json**](./files/scripts/Bike_Share_Availability_Prediction.json) file.
-
-![](./images/500/Picture500-17.png)
-
-The entire code for creating the model in OML is now accessible in the **Bike Share Availability Prediction** notebook.
-
-
-
-### **STEP 2: Run the Code in the OML Notebook**
-
-- Go to the **Bike Share Availability Prediction** notebook. First, you need to make sure to bind the interpreter in the notebook. Click on the **Interpreter binding** icon shown in the picture below.
-
-![](./images/500/Picture500-21.png)
-
-- Make sure the **%md** and one of the **%sql and %script** interpreters are selected and save the selected binding.
-
-![](./images/500/Picture500-22.png)
-
-- Now run the code in the **Bike Share Availability Prediction** notebook to train and validate a linear regression model and apply it to a weather forecast to predict the bike availability for a future day. Go over paragraphs one-by-one and run each at a time. Make sure each paragraph is completed without error. As the result of running the code in this notebook, several tables will be created. We will load a few of those tables in OAC in the next sections in order to generate our desired graphs. Note that running the entire notebook may take about 45 minutes.
-
-
-## Part 2. Visualize results in OAC
-
-### **STEP 3: Load Results of the OML Model to OAC**
+### **STEP 1: Load the Validation Result Table onto OAC**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -91,6 +36,14 @@ The entire code for creating the model in OML is now accessible in the **Bike Sh
 -  You should import tables **SSW_V_RES** and **SSW_P_RES** to the OAC instance. Import those tables as descirbed in **Step 4** in **Lab 300**. After completing these process, you should see four datasets in the data section.
 
 ![](./images/500/Picture500-34.png)
+
+
+## Part 2. Visualize Results of Prediction in OAC. 
+
+### **STEP 1: Load the Prediction Result Table onto OAC**
+
+
+
 
 
 

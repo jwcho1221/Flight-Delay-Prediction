@@ -22,86 +22,77 @@ This lab walks you through the steps to visualize results of validation and pred
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
-![](./images/500/Picture500-31.png)
+![](./images/500/Picture500-1.png)
 
--   Select the connection that you have created in  **Lab 300**.
+-   Select the connection (**FlightDelayPrediction**) that you have created in previous lab.
 
-![](./images/500/Picture500-32.png)
+![](./images/500/Picture500-2.png)
 
--   Select the OML user created in **Lab 100** from the list of users to import the tables that contain the results of the model created and ran in OML.
+-   Select the OML user created in **Lab 100**, then pick the validation result table (**OT_Valid_Res**).
 
-![](./images/500/Picture500-33.png)
+![](./images/500/Picture500-3.png)
 
+-   Click **Add All** to add all columns and click **Add** to save the dataset.  
 
--  You should import tables **SSW_V_RES** and **SSW_P_RES** to the OAC instance. Import those tables as descirbed in **Step 4** in **Lab 300**. After completing these process, you should see four datasets in the data section.
+![](./images/500/Picture500-4.png)
 
-![](./images/500/Picture500-34.png)
+### **STEP 2: Visualize Results of Validation using Combo chart**
+-   Once you have uploaded the validation result table onto OAC successfully, click **Visualize** tap.  
+![](./images/500/Picture500-5.png)
+
+-   Make visualization by following below steps to visualize the validation result. 
+![](./images/500/Picture500-6.png)
+    - Change **Aggregation** of DELAY, PREDICTEDDELAY columns as **Average**.
+    - Create a **Combo** chart
+    - **Values (Y-Axis)**: DELAY (Bar) and PREDICTEDDELAY (Line) 
+    - **Category (X-Axis)**: DEST
+    - Save the visualization (e.g. Visualization_Validation) 
+
+- Click the tap of **Narrate** and click **Present**. Now, you can see the graph as presentation mode. 
+![](./images/500/Picture500-7.png)
+
+**Notes:** In this graph, x-axis is each airport and y-axis is averaged flight’s delay time. Here, bars show the actual flight delay time and lines show the predicted delay time. This graph shows actual flight delay and predicted delay time at each destination. You can see that the line (predicted value) closely follows the pattern exhibited by the bar graphs (actual value). Hence, you can say the machine learning model is very reliable.
 
 
 ## Part 2. Visualize Results of Prediction in OAC. 
 
 ### **STEP 1: Load the Prediction Result Table onto OAC**
 
+- Repeat **Part 1.- STEP1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
 
+### **STEP 2: Make a new CARRIER column on tap of Prepare**
+- Click **Option** button on the column of **UNIQUECARRIER** and select **Duplicate**. 
+![](./images/500/Picture500-8.png)
 
+- Rename the duplicated column as **CARRIER** and click **Add Step**. 
+![](./images/500/Picture500-9.png)
 
+- Click **Option** button on the column of **CARRIER** and select **Replace**.Then, replace the actual carrier names to some character (e.g. AS -> A, UA -> B, WN -> C) and click **Add Step**. 
 
+![](./images/500/Picture500-10.png)
 
-### **STEP 4: Add Datasets to the Project**
+- Click **Apply Script** button to make all changes happen on the dataset. 
 
--  Open the **BikeSharePrediction** project that you imported to the OAC instance in **Lab 400**. Under the **Visualize** tab, click on the **+** icon next to the **Data Elements** and select **Add Data Set**.
+![](./images/500/Picture500-11.png)
 
-![](./images/500/Picture500-41.png)
+### **STEP 3: Visualize Results of Prediction using Bar graph**
+-   Once you have uploaded the prediction result table onto OAC successfully, click **Visualize** tap.  
 
--   Select **SSW_P_RES**, **SSW_V_RES**, and **STATION_INFO** and click on **Add to Project**.
+-   Make visualization by following below steps to visualize the prediction result. 
+![](./images/500/Picture500-12.png)
+    - Change **Aggregation** of PREDICTEDDELAY columns as **Average**.
+    - Change SCHEDULEDEEPTTIME, DAYOFWEEK as **Attribute**. 
+    - Create a **Bar** graph
+    - **Values (Y-Axis)**: PREDICTEDDELAY
+    - **Category (X-Axis)**: SCHEDULEDEEPTTIME
+    - **Color**: CARRIER
+    - Add ORIGIN (**LAX**), DEST(**SFO**), DAYOFWEEK(**4**, Thursday) and CARRIER(**A,B,C**) as filter. 
+    - Save the visualization (e.g. Visualization_Prediction) 
 
-![](./images/500/Picture500-42.png)
+- Click the tap of **Narrate** and click **Present**. Now, you can see the graph as presentation mode. 
+![](./images/500/Picture500-13.png)
 
--   Next, go to the Prepare tab and in the **Data Diagram** section, click on the **0** in the middle of the line between **SSW_P_RES** and **STATION_INFO** datasets (it appears when you move your mouse between the two datasets).
-
-![](./images/500/Picture500-43.png)
-
--   In the popped window, click on Add Another Match and select **STATION_ID** and **STATIONID** in **STATION_INFO** and **SSW_P_RES**. Finally, click **OK**.
-
-![](./images/500/Picture500-44.png)
-
--   Repeat **Step 4** to create a connection between **SSW_V_RES** and **STATION_INFO** datasets. Finally the Data Diagram should look like this:
-
-![](./images/500/Picture500-45.png)
-
-
-
-### **STEP 5: Create Desired Graphs**
-
--   Go back to the **Visualize** tab in the project, add a new Canvas by clicking on the **+** icon.
-
-![](./images/500/Picture500-51.png)
-
--   Click on the triangle next to the Canvas name, select Rename and enter the desired name for the Canvas, e.g. **Validation (OML Model)**.
-
-![](./images/500/Picture500-52.png)
-
--   In the newly created Canvas, create a **Combo** chart. Use the following values to set up the chart:
-
-![](./images/500/Picture500-53.png)
-
--   **Values (Y-Axis):**  SSW_V_RES->Actual_Available_Bikes (bar)   and   SSW_V_RES->Predicted_Available_Bikes (line)
-
--   **Category (X-Axis):** SSW_V_RES->Last_Reported->Hour of Day
-
--    **Filters:** SSW_V_RES->Last_Reported (start: 8/28/17 – end: 8/29/17)   and   Station_Info->Station_Name (Avenue D & E 8 St)
-
-
--   Repeat the first two instructions in this step to create another Canvas- e.g. **Prediction (OML Model)**- to visualize the prediction results. Create a **Bar** chart in this canvas as below:
-
-![](./images/500/Picture500-54.png)
-
--   **Values (Y-Axis):**  SSW_P_RES->Predicted_Available_Bikes (bar)
-
--   **Category (X-Axis):** SSW_P_RES->Last_Reported->Hour of Day
-
--   **Filters:** SSW_P_RES->Last_Reported (start: 8/31/17 – end: 9/1/17)   and   Station_Info->Station_Name (Avenue D & E 8 St)
-
+**Notes:** This graph shows predicted delay time for flights from LAX to SFO on a Thursday. Each color represents three major airlines, a, b, and c. This graph predicts that on a Thursday, airline “B” from LAX to SFO leaving at 4:50 p.m. will arrive about 17 minutes late. On the other hand, airline “C” from leaving at 4:45 p.m. will arrive only about 5 minutes late.
 
 
 

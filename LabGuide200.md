@@ -13,7 +13,7 @@ This lab walks you through the steps to load datasets from local file system int
 -   Learn how to connect to your new Autonomous Data Warehouse using SQL Developer
 -   Learn how to use the SQL Developer Data Import Wizard to load datasets
 -   Learn how to prepare datasets for training machine learning model in OAC 
--   Learn how to grant privileges to the OML User to Access All Datasets
+-   Learn how to grant privileges to the OML User to access all datasets
 
 ## Required Artifacts
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
@@ -54,24 +54,24 @@ Start SQL Developer and create a connection for your database using the default 
 
 -   Fill in the connection details as below:
 
--   **Connection Name:** admin_high
+  -   **Connection Name:** admin_high
 
--   **Username:** admin
+  -   **Username:** admin
 
--   **Password:** The password you specified during provisioning your instance
+  -   **Password:** The password you specified during provisioning your instance
 
--   **Connection Type:** Cloud Wallet
+  -   **Connection Type:** Cloud Wallet
 
--   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
+  -   **Configuration File:** Enter the full path for the wallet file you downloaded before, or click the **Browse button** to point to the location of the file.
 
--   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For
+  -   **Service:** There are 3 pre-configured database services for each database. Pick **&lt;databasename&gt;_high** for this lab. For
 example, if you the database you created was named adwfinance, select adwfinance_high as the service.
 
 *Note* : SQL Developer versions prior to 18.3 ask for a **Keystore Password.** Here, you would enter the password you specified when downloading the wallet from ADW.
 
 ![](./images/200/Picture200-18.jpg)
 
--   Test your connection by clicking the **Test** button, if it succeeds save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
+-   Test your connection by clicking the **Test** button, if it succeeds, save your connection information by clicking **Save**, then connect to your database by clicking the **Connect** button. An entry for the new connection appears under Connections.
 
 -   If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
@@ -81,8 +81,7 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 ### **STEP 3: Download the Data File to Your Local Computer**
 
-For this lab you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport. **If you want to follow steps to make this data file integrating flight.csv, weather.csv and aircraft.csv files, //// go to optional lab 600 . **
-
+For this lab, you will need a data file. Click [here](./files/datasets/Int_Flights_Aircraft_Weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
 
 ### **STEP 4: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
 
@@ -92,11 +91,11 @@ For this lab you will need a data file. Click [here](./files/datasets/Int_Flight
 
 - The Data Import Wizard is started. Enter the following information:
 
-  - Select Local File as source for the data load
+  - Select **Local File** as source for the data load
 
   - Click the browse button and navigate to the Int_Flights_Aircraft_Weather.csv file which you unzipped before 
   
-After selecting the file, you can preview the data and select the appropriate file formats. You will see that the data preview is interactive and changes according to your selection. When you are satisfied with the file content view, click **NEXT**.
+After selecting the file, you can preview the data and select the appropriate file formats. When you are satisfied with the file content view, click **NEXT**.
 
  ![](./images/200/Picture200-import2.jpg)
   
@@ -112,7 +111,7 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 ![](./images/200/Picture200-import4.jpg)
 
 
-- The column definition screen allows you to set the column names and data types for your new table. You can change these if you need to. For this exercise leave them as default and click **NEXT**.
+- The column definition screen allows you to set the column names and data types for your new table. You can change these if you need to. For this exercise, leave them as default and click **NEXT**.
 
 ![](./images/200/Picture200-import5.jpg)
 
@@ -134,7 +133,7 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 
 ### STEP 6: Grant Privileges to the OML User to Access All Datasets
 
--   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User (omluser1) which we created on previous lab. 
+-   Copy and paste [this code snippet](./files/scripts/grant_Privileges.sql) to a SQL Developer worksheet and run the script. This code is to grant privileges to the OML User (**omluser1**) which we created on previous lab. 
 
 
 

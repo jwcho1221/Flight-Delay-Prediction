@@ -106,7 +106,7 @@ In this section, you will create an OAC instance.
 
 ![](./images/300/Picture300-32.png)
 
--   Complete all the required fields in the wizard as described in the table below and Save the connection. Note that you need the ADW instance **Wallet** in order to be able to complete these fields (similar to connecting the SQL Developer to the ADW instance). Please refer to the instruction in **Lab100** for accessing the **Wallet**.
+-   Complete all the required fields in the wizard and Save the connection. Note that you need the ADW instance **Wallet** in order to be able to complete these fields. Please refer to the instruction in **Lab100** for accessing the **Wallet**.
 
 -   You should fill the following connection fields, then click **Save**:
 
@@ -146,7 +146,7 @@ In this section, you will create an OAC instance.
 
 ## Part 4. Build Machine Learning Models in OAC 
 
-### **STEP 5: Create Data Flow to Create Machine Learning Models**
+### **STEP 5: Create Data Flow to Build Machine Learning Models**
 Once you have created connection and uploaded dataset from ADW to OAC successfully, let's create **Data Flow** to build machine learning model. 
 
 -   On the main page of OAC, click **Data Flow** to create the machine learning model. 

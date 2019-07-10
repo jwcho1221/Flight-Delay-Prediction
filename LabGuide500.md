@@ -56,18 +56,18 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ## Part 2. Visualize Results of Prediction in OAC. 
 
-### **STEP 1: Load the Prediction Result Table onto OAC**
+### **STEP 3: Load the Prediction Result Table onto OAC**
 
-- Repeat **Part 1.- STEP1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
+- Repeat **Part 1.STEP1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
 
-### **STEP 2: Make a new CARRIER column on tap of Prepare**
+### **STEP 4: Make a new CARRIER column on tap of Prepare**
 - Click **Option** button on the column of **UNIQUECARRIER** and select **Duplicate**. 
 ![](./images/500/Picture500-8.png)
 
 - Rename the duplicated column as **CARRIER** and click **Add Step**. 
 ![](./images/500/Picture500-9.png)
 
-- Click **Option** button on the column of **CARRIER** and select **Replace**.Then, replace the actual carrier names to some character (e.g. AS -> A, UA -> B, WN -> C) and click **Add Step**. 
+- Click **Option** button on the column of **CARRIER** and select **Replace**. Then, replace the actual carrier names to some character (e.g. AS -> A, UA -> B, WN -> C) and click **Add Step**. 
 
 ![](./images/500/Picture500-10.png)
 
@@ -75,7 +75,7 @@ This lab walks you through the steps to visualize results of validation and pred
 
 ![](./images/500/Picture500-11.png)
 
-### **STEP 3: Visualize Results of Prediction using Bar graph**
+### **STEP 5: Visualize Results of Prediction using Bar graph**
 -   Once you have uploaded the prediction result table onto OAC successfully, click **Visualize** tap.  
 
 -   Make visualization by following below steps to visualize the prediction result. 
